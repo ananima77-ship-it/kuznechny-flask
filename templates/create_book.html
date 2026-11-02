@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Добавить книгу{% endblock %}
+
+{% block content %}
+<h1>📚 Добавить книгу</h1>
+<a href="/books" class="btn btn-secondary mb-3">← Назад</a>
+<form method="post">
+    <div class="mb-3">
+        <label>Название</label>
+        <input type="text" name="title" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label>Автор</label>
+        <input type="text" name="author" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label>ISBN</label>
+        <input type="text" name="isbn" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label>Год издания</label>
+        <input type="number" name="year_published" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label>Цена</label>
+        <input type="text" name="price" class="form-control">
+    </div>
+    <div class="mb-3 form-check">
+        <input type="checkbox" name="available" class="form-check-input">
+        <label class="form-check-label">В наличии</label>
+    </div>
+    <button type="submit" class="btn btn-success">Сохранить</button>
+</form>
+{% endblock %}

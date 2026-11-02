@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Читатели{% endblock %}
+
+{% block content %}
+<h1>👤 Читатели (7 полей)</h1>
+<a href="/readers/create" class="btn btn-success mb-3">➕ Добавить читателя</a>
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th><th>ФИО</th><th>Email</th><th>Телефон</th>
+            <th>Дата рожд.</th><th>Активен</th><th>Дата рег.</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for reader in readers %}
+        <tr>
+            <td>{{ reader.id }}</td>
+            <td>{{ reader.full_name }}</td>
+            <td>{{ reader.email }}</td>
+            <td>{{ reader.phone or '-' }}</td>
+            <td>{{ reader.birth_date or '-' }}</td>
+            <td>{{ 'Да' if reader.is_active else 'Нет' }}</td>
+            <td>{{ reader.registration_date or '-' }}</td>
+        </tr>
+        {% else %}
+        <tr><td colspan="7">Нет читателей</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

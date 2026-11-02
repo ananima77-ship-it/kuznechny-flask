@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Книги{% endblock %}
+
+{% block content %}
+<h1>📚 Книги (7 полей)</h1>
+<a href="/books/create" class="btn btn-success mb-3">➕ Добавить книгу</a>
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th><th>Название</th><th>Автор</th><th>ISBN</th>
+            <th>Год</th><th>Цена</th><th>В наличии</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for book in books %}
+        <tr>
+            <td>{{ book.id }}</td>
+            <td>{{ book.title }}</td>
+            <td>{{ book.author }}</td>
+            <td>{{ book.isbn or '-' }}</td>
+            <td>{{ book.year_published or '-' }}</td>
+            <td>{{ book.price or '0' }}</td>
+            <td>{{ 'Да' if book.available else 'Нет' }}</td>
+        </tr>
+        {% else %}
+        <tr><td colspan="7">Нет книг</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

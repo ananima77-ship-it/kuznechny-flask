@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Главная{% endblock %}
+
+{% block content %}
+<div class="jumbotron">
+    <h1 class="display-4">Добро пожаловать в библиотеку!</h1>
+    <p class="lead">Управление книгами и читателями</p>
+    <hr class="my-4">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">📚 Книги</h5>
+                    <p class="card-text">Управление книгами</p>
+                    <a href="/books" class="btn btn-primary">Перейти</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">👤 Читатели</h5>
+                    <p class="card-text">Управление читателями</p>
+                    <a href="/readers" class="btn btn-success">Перейти</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

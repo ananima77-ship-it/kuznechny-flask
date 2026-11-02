@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Добавить читателя{% endblock %}
+
+{% block content %}
+<h1>👤 Добавить читателя</h1>
+<a href="/readers" class="btn btn-secondary mb-3">← Назад</a>
+<form method="post">
+    <div class="mb-3">
+        <label>ФИО</label>
+        <input type="text" name="full_name" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label>Email</label>
+        <input type="email" name="email" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label>Телефон</label>
+        <input type="text" name="phone" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label>Дата рождения (ГГГГ-ММ-ДД)</label>
+        <input type="date" name="birth_date" class="form-control">
+    </div>
+    <div class="mb-3 form-check">
+        <input type="checkbox" name="is_active" class="form-check-input" checked>
+        <label class="form-check-label">Активен</label>
+    </div>
+    <div class="mb-3">
+        <label>Дата регистрации (ГГГГ-ММ-ДД)</label>
+        <input type="date" name="registration_date" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-success">Сохранить</button>
+</form>
+{% endblock %}
