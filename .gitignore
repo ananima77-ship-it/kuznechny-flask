@@ -1,4 +1,7 @@
+bin/
+obj/
+*.user
+.vs/
+*.db
 venv/
 __pycache__/
-*.db
-instance/
